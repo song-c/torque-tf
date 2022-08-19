@@ -5,12 +5,12 @@ variable "aws_region" {
 
 variable "param_db_pass_name" {
   type    = string
-  default = "test_name"
+  default = "example_db_password"
 }
 
 variable "param_db_user_name" {
   type    = string
-  default = "test_name"
+  default = "example_db_user"
 }
 
 data "aws_ssm_parameter" "db_pass" {
@@ -22,12 +22,12 @@ data "aws_ssm_parameter" "db_user" {
 }
 
 output "db_pass" {
-  value = aws_ssm_parameter.db_pass.value
+  value = data.aws_ssm_parameter.db_pass.value
   sensitive = true
 }
 
 output "db_user" {
-  value = aws_ssm_parameter.db_user.value
+  value = data.aws_ssm_parameter.db_user.value
   sensitive = true
 }
 
