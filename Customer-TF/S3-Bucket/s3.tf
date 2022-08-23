@@ -13,7 +13,7 @@ resource "aws_s3_bucket" "bucket" {
     }
 }
 
-output "ssm_value" {
+output "bucket_name" {
     value = aws_s3_bucket.bucket.bucket
 }
 
