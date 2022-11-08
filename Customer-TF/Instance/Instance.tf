@@ -18,6 +18,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "myapp" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
+  public = "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance"
 
   tags = {
     Name = var.name
