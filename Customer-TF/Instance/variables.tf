@@ -20,5 +20,5 @@ variable "s3_bucket" {
 
 variable "aws_region" {
   type    = string
-  default = "us_west2"
+  default = "us-west-2"
 }
